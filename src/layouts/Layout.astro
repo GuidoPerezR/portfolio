@@ -1,16 +1,49 @@
 ---
 import '@/styles/global.css';
+import '@fontsource-variable/league-spartan';
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <title>Guidzero - Portafolio Personal</title>
+    <title>Guidzero | Desarrollador Web | Portafolio</title>
+    <ClientRouter />
   </head>
-  <body>
+  <body class="relative min-h-dvh w-full overflow-hidden">
+    <video
+      id="video-bg"
+      src="/videos/bg.mp4"
+      autoplay
+      loop
+      muted
+      class="fixed top-0 left-0 -z-30 h-full w-full object-cover object-top"
+    ></video>
+
+    <img
+      src="/images/moon.webp"
+      alt="la luna we"
+      class="fixed top-0 right-0 w-[520px] -z-20 -translate-y-28 opacity-60"
+    />
+
     <slot />
   </body>
 </html>
+<!-- 
+<style>
+  .stars-overlay {
+    background-image:
+      radial-gradient(2px 2px at 50px 10px, #eee, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.8;
+  }
+</style> -->

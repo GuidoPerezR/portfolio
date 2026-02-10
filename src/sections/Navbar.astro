@@ -1,0 +1,46 @@
+---
+import { NAVLINKS } from '@/const/NavLinks';
+---
+
+<nav
+  class="fixed top-1/2 flex w-fit -translate-y-1/2 flex-col gap-8 pl-24 font-spartan"
+>
+  {
+    NAVLINKS.map((link) => (
+      <a
+        href={link.href}
+        data-description={link.description}
+        class="nav-link w-fit text-2xl font-semibold text-light-gray uppercase transition-colors duration-300 hover:text-hover-nav"
+      >
+        {link.title}
+      </a>
+    ))
+  }
+</nav>
+
+<span
+  id="nav-description"
+  class="fixed bottom-44 z-10 pl-24 font-spartan text-xl font-semibold text-light-gray opacity-0 transition-opacity duration-300"
+>
+</span>
+
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const description = document.getElementById('nav-description');
+
+  links.forEach((link) => {
+    link.addEventListener('mouseenter', () => {
+      const desc = link.getAttribute('data-description');
+      if (description && desc) {
+        description.textContent = desc;
+        description.style.opacity = '1';
+      }
+    });
+
+    link.addEventListener('mouseleave', () => {
+      if (description) {
+        description.style.opacity = '0';
+      }
+    });
+  });
+</script>
