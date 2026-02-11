@@ -5,4 +5,12 @@
   --color-light-gray: #969696;
   --color-hover-nav: #e6e6e6;
   --color-dark-bg: #0a0a0a7a;
+  --color-html: #e34f26;
+  --color-css: #1572b6;
+  --color-tailwind: #3178c6;
+  --color-javascript: #f7df1e;
+  --color-typescript: #3178c6;
+  --color-react: #61dafb;
+  --color-astro: #ff5f5f;
+  --color-git: #f05032;
 }

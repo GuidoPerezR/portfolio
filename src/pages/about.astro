@@ -14,7 +14,7 @@ import { TECHNOLOGIES } from '@/const/Tecnologies';
             {
               TECHNOLOGIES.map(({ name, color, icon: Icon }) => (
                 <li
-                  class={`transition-colors duration-300 hover:text-[${color}] group flex w-fit cursor-auto items-center gap-2 will-change-transform`}
+                  class={`group flex w-fit cursor-auto items-center gap-2 transition-colors duration-300 will-change-transform ${color}`}
                 >
                   {name}
                   <Icon class="size-8 -translate-x-8 translate-y-10 rotate-90 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100" />

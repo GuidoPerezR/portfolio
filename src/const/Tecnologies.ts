@@ -1,45 +1,45 @@
 import HTML from '@/components/icons/HTML.astro';
-import Css from '@/components/icons/Css.astro';
+import CSS from '@/components/icons/CSS.astro';
 
 export const TECHNOLOGIES = [
   {
     name: 'HTML',
     icon: HTML,
-    color: '#E34F26',
+    color: 'hover:text-html',
   },
   {
     name: 'CSS',
-    icon: Css,
-    color: '#3178C6',
+    icon: CSS,
+    color: 'hover:text-css',
   },
   {
     name: 'Tailwind CSS',
     icon: 'tailwindcss',
-    color: '#3178C6',
+    color: 'hover:text-tailwind',
   },
   {
     name: 'JavaScript',
     icon: 'javascript',
-    color: '#F7DF1E',
+    color: 'hover:text-javascript',
   },
   {
     name: 'TypeScript',
     icon: 'typescript',
-    color: '#3178C6',
+    color: 'hover:text-typescript',
   },
   {
     name: 'React',
     icon: 'react',
-    color: '#61DAFB',
+    color: 'hover:text-react',
   },
   {
     name: 'Astro',
     icon: 'astro',
-    color: '#FF5D01',
+    color: 'hover:text-astro',
   },
   {
     name: 'Git',
     icon: 'git',
-    color: '#F05032',
+    color: 'hover:text-git',
   },
 ];
