@@ -1,10 +1,51 @@
 ---
 import Layaout from '@/layouts/Layout.astro';
 import PageContainer from '@/components/PageContainer.astro';
+import { TECHNOLOGIES } from '@/const/Tecnologies';
 ---
 
 <Layaout>
   <PageContainer title="Sobre mi">
-    <h1>Sobre mi</h1>
+    <div class="mt-12 flex flex-1">
+      <div class="w-full">
+        <div class="flex flex-col gap-4 text-2xl font-medium">
+          <span>Tecnologias</span>
+          <ul class="flex flex-col gap-4 text-light-gray">
+            {
+              TECHNOLOGIES.map(({ name, color, icon: Icon }) => (
+                <li
+                  class={`transition-colors duration-300 hover:text-[${color}] group flex w-fit cursor-auto items-center gap-2 will-change-transform`}
+                >
+                  {name}
+                  <Icon class="size-8 -translate-x-8 translate-y-10 rotate-90 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100" />
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="w-full max-w-3xl">
+        <div class="flex flex-col items-end">
+          <header class="flex w-full items-center pl-[68px]">
+            <h2 class="text-2xl font-semibold">Guido Perez Ruiz</h2>
+          </header>
+          <div class="mt-6 h-72 w-[700px]">
+            <img
+              src="/images/me3.jpeg"
+              alt=""
+              class="h-full w-full object-cover object-top"
+            />
+          </div>
+        </div>
+        <div class="mt-6 flex w-full justify-end">
+          <p class="max-w-lg text-right text-lg">
+            Soy un desarrollador web con experiencia en el desarrollo de
+            aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y
+            frameworks como React y Vue.js. Me apasiona crear experiencias de
+            usuario atractivas y funcionales, y siempre estoy buscando aprender
+          </p>
+        </div>
+      </div>
+    </div>
   </PageContainer>
 </Layaout>
