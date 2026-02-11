@@ -13,7 +13,7 @@ export const NAVLINKS: NavLink[] = [
   },
   {
     title: 'Experiencia',
-    href: '#experiencia',
+    href: '/experience',
     description:
       'Descubre mi trayectoria profesional y proyectos en los que he trabajado',
   },

@@ -1,0 +1,91 @@
+---
+import PageContainer from '@/components/PageContainer.astro';
+import { EXPERIENCES } from '@/const/Experiences';
+import Layaout from '@/layouts/Layout.astro';
+---
+
+<Layaout>
+  <PageContainer title="Experiencia">
+    <div class="mt-12 flex flex-1">
+      <div class="flex w-full items-center pl-8">
+        <div
+          class="flex -translate-y-12 flex-col items-start gap-6 text-3xl font-medium text-light-gray uppercase"
+        >
+          {
+            EXPERIENCES.map(({ name, id }) => (
+              <button
+                class="experience-btn transitioon-colors cursor-pointer uppercase duration-300 hover:text-hover-nav"
+                data-id={id}
+              >
+                {name}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex w-full items-center">
+        {
+          EXPERIENCES.map(
+            ({ name, id, role, period, description, technologies }) => (
+              <div
+                id={`detail-${id}`}
+                class="experience-detail hidden -translate-y-12 flex-col gap-4 p-8 opacity-0 transition-opacity duration-300"
+              >
+                <h2 class="text-2xl font-bold text-white">{name}</h2>
+                <p class="text-lg text-light-gray">{role}</p>
+                <p class="text-sm text-light-gray">{period}</p>
+                <p class="text-base text-light-gray">{description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {technologies.map((tech) => (
+                    <span class="rounded bg-white/10 px-3 py-1 text-sm text-white">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ),
+          )
+        }
+      </div>
+    </div>
+  </PageContainer>
+</Layaout>
+<script>
+  function setupExperienceButtons() {
+    const buttons = document.querySelectorAll('.experience-btn');
+    const details = document.querySelectorAll('.experience-detail');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+
+        // Ocultar todos los detalles
+        details.forEach((d) => {
+          d.classList.add('hidden', 'opacity-0');
+          d.classList.remove('flex');
+        });
+
+        // Mostrar el seleccionado
+        const target = document.getElementById(`detail-${id}`);
+        if (target) {
+          target.classList.remove('hidden');
+          // Pequeño delay para que la transición de opacity funcione
+          requestAnimationFrame(() => {
+            target.classList.add('flex');
+            target.classList.remove('opacity-0');
+          });
+        }
+
+        // Marcar botón activo
+        buttons.forEach((b) => b.classList.remove('text-white'));
+        btn.classList.add('text-white');
+      });
+    });
+  }
+
+  // Ejecutar en la carga inicial
+  setupExperienceButtons();
+
+  // Ejecutar después de cada navegación con View Transitions
+  document.addEventListener('astro:page-load', setupExperienceButtons);
+</script>
