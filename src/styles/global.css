@@ -3,6 +3,7 @@
 @theme {
   --font-spartan: 'League Spartan Variable', sans-serif;
   --color-light-gray: #969696;
+  --color-hover-card: #30303080;
   --color-hover-nav: #e6e6e6;
   --color-dark-bg: #0a0a0a7a;
   --color-html: #e34f26;

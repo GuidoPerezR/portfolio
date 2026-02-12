@@ -1,0 +1,21 @@
+---
+const { id, title, image, short_desc, date } = Astro.props;
+---
+
+<article
+  class="project-item flex h-36 w-full cursor-pointer text-light-gray transition-colors duration-300 hover:bg-hover-card hover:text-hover-nav"
+  data-project-id={id}
+>
+  <div class="w-full flex-1">
+    <img src={image} alt="" class="h-full w-full object-cover" />
+  </div>
+  <div class="flex w-full flex-2 items-center justify-between p-4">
+    <div>
+      <span class="text-2xl font-bold uppercase">{title}</span>
+      <p class="mt-1.5 text-lg">{short_desc}</p>
+    </div>
+    <div>
+      <span class="text-xl font-bold uppercase">{date}</span>
+    </div>
+  </div>
+</article>

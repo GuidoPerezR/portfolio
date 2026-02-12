@@ -1,0 +1,101 @@
+---
+import PageContainer from '@/components/PageContainer.astro';
+import Project from '@/components/Project.astro';
+import ProjectInfo from '@/components/ProjectInfo.astro';
+import { PROJECTS } from '@/const/Projects';
+import Layaout from '@/layouts/Layout.astro';
+
+const pageInfo = {
+  title: 'Proyectos',
+  id: 'projects',
+};
+---
+
+<Layaout>
+  <PageContainer {...pageInfo}>
+    <div class="mt-12 flex flex-1">
+      <div class="w-full">
+        <div class="projects-container flex w-full flex-col gap-6 pr-4">
+          {
+            PROJECTS.map((project) => (
+                <Project {...project} />
+                <hr class="mt-6 text-light-gray" />
+            ))
+          }
+        </div>
+      </div>
+      <div class="flex w-full justify-end">
+        {
+          PROJECTS.map((project) => (
+            <ProjectInfo {...project} />
+          ))
+        }
+      </div>
+    </div>
+  </PageContainer>
+</Layaout>
+
+<style>
+  .projects-container {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+  }
+
+  .projects-container::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .projects-container::-webkit-scrollbar-track {
+    background: #242424;
+  }
+
+  .projects-container::-webkit-scrollbar-thumb {
+    background: #e6e6e6;
+    border-radius: 4px;
+  }
+
+  .projects-container::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+</style>
+
+<script>
+  function setupProjectSelection() {
+    const projectItems = document.querySelectorAll('.project-item');
+    const projectDetails = document.querySelectorAll('.project-detail');
+
+    projectItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const projectId = item.getAttribute('data-project-id');
+
+        // Ocultar todos los detalles
+        projectDetails.forEach((d) => {
+          d.classList.add('hidden', 'opacity-0');
+          d.classList.remove('flex');
+        });
+
+        // Mostrar el seleccionado
+        const target = document.getElementById(`project-detail-${projectId}`);
+        if (target) {
+          target.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            target.classList.add('flex');
+            target.classList.remove('opacity-0');
+          });
+        }
+
+        // Marcar proyecto activo
+        projectItems.forEach((p) => {p.classList.remove('text-white', 'bg-hover-card');
+});
+item.classList.add('text-white', 'bg-hover-card');
+      });
+      
+    });
+  }
+
+  // Ejecutar en la carga inicial
+  setupProjectSelection();
+
+  // Ejecutar después de cada navegación con View Transitions
+  document.addEventListener('astro:page-load', setupProjectSelection);
+</script>
