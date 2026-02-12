@@ -43,3 +43,8 @@ export const TECHNOLOGIES = [
     color: 'hover:text-git',
   },
 ];
+
+export const TECH_ICONS = {
+  HTML: HTML,
+  CSS: CSS,
+}
