@@ -2,10 +2,15 @@
 import PageContainer from '@/components/PageContainer.astro';
 import { EXPERIENCES } from '@/const/Experiences';
 import Layaout from '@/layouts/Layout.astro';
+
+const pageInfo = {
+  title: 'Experiencia',
+  id: 'experience',
+};
 ---
 
 <Layaout>
-  <PageContainer title="Experiencia">
+  <PageContainer {...pageInfo}>
     <div class="mt-12 flex flex-1">
       <div class="flex w-full items-center pl-8">
         <div

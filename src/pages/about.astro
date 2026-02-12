@@ -2,10 +2,15 @@
 import Layaout from '@/layouts/Layout.astro';
 import PageContainer from '@/components/PageContainer.astro';
 import { TECHNOLOGIES } from '@/const/Tecnologies';
+
+const pageInfo = {
+  title: 'Sobre mi',
+  id: 'about',
+};
 ---
 
 <Layaout>
-  <PageContainer title="Sobre mi">
+  <PageContainer {...pageInfo}>
     <div class="mt-12 flex flex-1">
       <div class="w-full">
         <div class="flex flex-col gap-4 text-2xl font-medium">
