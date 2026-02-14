@@ -6,16 +6,21 @@ import { NAVLINKS } from '@/const/NavLinks';
   class="fixed top-1/2 flex w-fit -translate-y-1/2 flex-col gap-8 pl-24 font-spartan"
 >
   {
-    NAVLINKS.map((link) => (
-      <a
-        href={link.href}
-        data-description={link.description}
-        class="nav-link w-fit text-2xl font-semibold text-light-gray uppercase transition-colors duration-300 hover:text-hover-nav"
-        transition:name={link.id}
-      >
-        {link.title}
-      </a>
-    ))
+    NAVLINKS.map((link) => {
+      const isCvDownload = link.title === 'Descargar CV';
+
+      return (
+        <a
+          href={link.href}
+          data-description={link.description}
+          class="nav-link w-fit text-2xl font-semibold text-light-gray uppercase transition-colors duration-300 hover:text-hover-nav"
+          transition:name={link.id}
+          download={isCvDownload ? '' : undefined}
+        >
+          {link.title}
+        </a>
+      );
+    })
   }
 </nav>
 
@@ -26,22 +31,28 @@ import { NAVLINKS } from '@/const/NavLinks';
 </span>
 
 <script>
-  const links = document.querySelectorAll('.nav-link');
-  const description = document.getElementById('nav-description');
+  function setNavDescriptions() {
+    const links = document.querySelectorAll('.nav-link');
+    const description = document.getElementById('nav-description');
 
-  links.forEach((link) => {
-    link.addEventListener('mouseenter', () => {
-      const desc = link.getAttribute('data-description');
-      if (description && desc) {
-        description.textContent = desc;
-        description.style.opacity = '1';
-      }
-    });
+    links.forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        const desc = link.getAttribute('data-description');
+        if (description && desc) {
+          description.textContent = desc;
+          description.style.opacity = '1';
+        }
+      });
 
-    link.addEventListener('mouseleave', () => {
-      if (description) {
-        description.style.opacity = '0';
-      }
+      link.addEventListener('mouseleave', () => {
+        if (description) {
+          description.style.opacity = '0';
+        }
+      });
     });
-  });
+  }
+
+  setNavDescriptions();
+
+  document.addEventListener('astro:page-load', setNavDescriptions);
 </script>
