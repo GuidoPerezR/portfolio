@@ -30,12 +30,12 @@ export const NAVLINKS: NavLink[] = [
   {
     id: 'contact',
     title: 'Contacto',
-    href: '#contacto',
+    href: '/contact',
     description: 'Ponte en contacto conmigo para colaboraciones o consultas',
   },
   {
     title: 'Descargar CV',
-    href: '/cv',
+    href: '/files/Currículum_Vitae_Guido_Pérez_Ruiz.pdf',
     description: 'Descarga mi currículum completo en formato PDF',
   },
 ];
