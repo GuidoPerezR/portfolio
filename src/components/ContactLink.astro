@@ -1,0 +1,14 @@
+---
+const { label, url, icon: Icon, value } = Astro.props;
+---
+
+<span class="flex items-center gap-3"
+  >{label} <Icon class="size-8 -translate-y-0.5" /> </span
+>
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="transition-300 ml-4 text-light-gray transition-colors hover:text-hover-nav"
+  >{value}</a
+>
