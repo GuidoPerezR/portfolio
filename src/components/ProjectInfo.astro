@@ -1,9 +1,19 @@
 ---
-import { TECHNOLOGIES } from '@/const/Tecnologies';
+import { TECH_ICONS } from '@/const/Tecnologies';
 import ExternalLink from '@/components/icons/ExternalLink.astro';
 import Github from '@/components/icons/Github.astro';
 
 const { id, title, image, long_desc, technologies, link, github } = Astro.props;
+
+type TechIconKey = keyof typeof TECH_ICONS;
+
+const isTechIconKey = (tech: string): tech is TechIconKey => {
+  return tech in TECH_ICONS;
+};
+
+const getTechIcon = (tech: string) => {
+  return isTechIconKey(tech) ? TECH_ICONS[tech] : undefined;
+};
 ---
 
 <div
@@ -21,7 +31,7 @@ const { id, title, image, long_desc, technologies, link, github } = Astro.props;
     <div class="mt-4 flex gap-2">
       {
         technologies?.map((tech: string) => {
-          const Icon = TECHNOLOGIES.find((e) => e.name === tech)?.icon;
+          const Icon = getTechIcon(tech);
           return (
             <span class="flex items-center gap-1.5 bg-white/10 px-3 py-1.5 text-white">
               {tech} {Icon && <Icon class="size-5" />}
