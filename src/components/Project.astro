@@ -9,7 +9,7 @@ const { id, title, image, short_desc, date } = Astro.props;
   <div class="w-full flex-1">
     <img src={image} alt="" class="h-full w-full object-cover" />
   </div>
-  <div class="flex w-full flex-2 items-center justify-between p-4">
+  <div class="flex w-full flex-2 items-center justify-between p-4 gap-2">
     <div>
       <span class="text-2xl font-bold uppercase">{title}</span>
       <p class="mt-1.5 text-lg">{short_desc}</p>
