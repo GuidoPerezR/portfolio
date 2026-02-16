@@ -1,5 +1,14 @@
 import HTML from '@/components/icons/HTML.astro';
 import CSS from '@/components/icons/CSS.astro';
+import Tailwind from '@/components/icons/Tailwind.astro';
+import JavaScript from '@/components/icons/JavaScript.astro';
+import TypeScript from '@/components/icons/TypeScript.astro';
+import React from '@/components/icons/React.astro';
+import Astro from '@/components/icons/AstroIcon.astro';
+import Git from '@/components/icons/Git.astro';
+import Supabase from '@/components/icons/Supabase.astro';
+import Valibot from '@/components/icons/Valibot.astro';
+import Strapi from '@/components/icons/Strapi.astro';
 
 export const TECHNOLOGIES = [
   {
@@ -14,32 +23,32 @@ export const TECHNOLOGIES = [
   },
   {
     name: 'Tailwind CSS',
-    icon: 'tailwindcss',
+    icon: Tailwind,
     color: 'hover:text-tailwind',
   },
   {
     name: 'JavaScript',
-    icon: 'javascript',
+    icon: JavaScript,
     color: 'hover:text-javascript',
   },
   {
     name: 'TypeScript',
-    icon: 'typescript',
+    icon: TypeScript,
     color: 'hover:text-typescript',
   },
   {
     name: 'React',
-    icon: 'react',
+    icon: React,
     color: 'hover:text-react',
   },
   {
     name: 'Astro',
-    icon: 'astro',
+    icon: Astro,
     color: 'hover:text-astro',
   },
   {
     name: 'Git',
-    icon: 'git',
+    icon: Git,
     color: 'hover:text-git',
   },
 ];
@@ -47,4 +56,13 @@ export const TECHNOLOGIES = [
 export const TECH_ICONS = {
   HTML: HTML,
   CSS: CSS,
-}
+  'Tailwind CSS': Tailwind,
+  JavaScript: JavaScript,
+  TypeScript: TypeScript,
+  React: React,
+  Astro: Astro,
+  Git: Git,
+  Supabase: Supabase,
+  Valibot: Valibot,
+  Strapi: Strapi,
+};
