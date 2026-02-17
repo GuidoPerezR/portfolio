@@ -8,7 +8,7 @@ interface NavLink {
 export const NAVLINKS: NavLink[] = [
   {
     id: 'about',
-    title: 'Sobre Mi',
+    title: 'Sobre Mí',
     href: '/about',
     description:
       'Conoce mis habilidades y pasión por el desarrollo web',

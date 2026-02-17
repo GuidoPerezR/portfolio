@@ -53,7 +53,7 @@ export const PROJECTS = [
   },
   {
     id: 'project-5',
-    title: 'Savings App',
+    title: 'Saving Saves',
     short_desc:
       'Una aplicación web para gestionar tus finanzas personales de forma facil y sencilla.',
     long_desc:
