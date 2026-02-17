@@ -11,7 +11,7 @@ export const NAVLINKS: NavLink[] = [
     title: 'Sobre Mi',
     href: '/about',
     description:
-      'Conoce mi historia, habilidades y pasión por el desarrollo web',
+      'Conoce mis habilidades y pasión por el desarrollo web',
   },
   {
     id: 'experience',
