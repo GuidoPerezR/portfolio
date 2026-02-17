@@ -4,7 +4,7 @@ import PageContainer from '@/components/PageContainer.astro';
 import { TECHNOLOGIES } from '@/const/Tecnologies';
 
 const pageInfo = {
-  title: 'Sobre mi',
+  title: 'Sobre mí',
   id: 'about',
 };
 ---
@@ -14,7 +14,7 @@ const pageInfo = {
     <div class="mt-12 flex flex-1">
       <div class="w-full">
         <div class="flex flex-col gap-4 text-2xl font-medium">
-          <span>Tecnologias</span>
+          <span>Tecnologías</span>
           <ul class="flex flex-col gap-4 text-light-gray">
             {
               TECHNOLOGIES.map(({ name, color, icon: Icon }) => (
@@ -42,12 +42,25 @@ const pageInfo = {
             />
           </div>
         </div>
-        <div class="mt-6 flex w-full justify-end">
-          <p class="max-w-lg text-right text-lg">
-            Soy un desarrollador web con experiencia en el desarrollo de
-            aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript y
-            frameworks como React y Vue.js. Me apasiona crear experiencias de
-            usuario atractivas y funcionales, y siempre estoy buscando aprender
+        <div class="mt-6 flex w-full flex-col items-end gap-4">
+          <p class="max-w-xl text-right text-lg">
+            Desarrollador web con <span class="font-semibold text-astro"
+              >2 años de experiencia</span
+            >. Me enfoco en el desarrollo <span class="font-semibold text-astro"
+              >Front-end</span
+            >, utilizando tecnologías como TypeScript, React y Tailwind CSS.
+          </p>
+          <p class="max-w-xl text-right text-lg">
+            Me gusta crear sitios que puedan <span
+              class="font-semibold text-astro">resolver la necesidad</span
+            > del cliente de forma <span class="font-semibold text-astro"
+              >atractiva, optimizada</span
+            > y brindando la mejor experiencia de usuario.
+          </p>
+          <p class="max-w-xl text-right text-lg">
+            Siempre estoy <span class="font-semibold text-astro"
+              >mejorando mis habilidades</span
+            > para poder brindar una nueva experiencia en cada sitio que realizo.
           </p>
         </div>
       </div>
