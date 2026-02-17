@@ -9,6 +9,8 @@ const pageInfo = {
   title: 'Proyectos',
   id: 'projects',
 };
+
+const recentProjects = PROJECTS.slice().reverse();
 ---
 
 <Layaout>
@@ -17,7 +19,7 @@ const pageInfo = {
       <div class="w-full">
         <div class="projects-container flex w-full flex-col gap-6 pr-4">
           {
-            PROJECTS.map((project) => (
+            recentProjects.map((project) => (
                 <Project {...project} />
                 <hr class="mt-6 text-light-gray" />
             ))
@@ -26,7 +28,7 @@ const pageInfo = {
       </div>
       <div class="flex w-full justify-end">
         {
-          PROJECTS.map((project) => (
+          recentProjects.map((project) => (
             <ProjectInfo {...project} />
           ))
         }

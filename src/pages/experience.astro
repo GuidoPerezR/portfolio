@@ -30,26 +30,18 @@ const pageInfo = {
       </div>
       <div class="flex w-full items-center">
         {
-          EXPERIENCES.map(
-            ({ name, id, role, period, description, technologies }) => (
-              <div
-                id={`detail-${id}`}
-                class="experience-detail hidden -translate-y-12 flex-col gap-4 p-8 opacity-0 transition-opacity duration-300"
-              >
-                <h2 class="text-2xl font-bold text-white">{name}</h2>
-                <p class="text-lg text-light-gray">{role}</p>
-                <p class="text-sm text-light-gray">{period}</p>
-                <p class="text-base text-light-gray">{description}</p>
-                <div class="flex flex-wrap gap-2">
-                  {technologies.map((tech) => (
-                    <span class="rounded bg-white/10 px-3 py-1 text-sm text-white">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ),
-          )
+          EXPERIENCES.map(({ name, id, role, period, description }) => (
+            <div
+              id={`detail-${id}`}
+              class="experience-detail hidden -translate-y-12 flex-col gap-4 p-8 opacity-0 transition-opacity duration-300"
+            >
+              <h2 class="text-2xl font-bold text-white">
+                {name} - {role}
+              </h2>
+              <p class="text-lg text-light-gray">{period}</p>
+              <p class="text-xl text-white">{description}</p>
+            </div>
+          ))
         }
       </div>
     </div>
