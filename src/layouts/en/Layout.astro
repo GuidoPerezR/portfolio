@@ -1,0 +1,28 @@
+---
+import '@/styles/global.css';
+import '@fontsource-variable/league-spartan';
+import { ClientRouter } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <title>Guidzero | Web Developer | Portfolio</title>
+    <ClientRouter />
+  </head>
+  <body class="relative min-h-dvh w-full overflow-hidden bg-black">
+    <video
+      id="video-bg"
+      src="/videos/sea.mp4"
+      autoplay
+      loop
+      muted
+      class="fixed top-0 left-0 -z-40 h-full w-full mask-radial-from-25% mask-circle mask-radial-at-center object-cover object-top"
+    ></video>
+
+    <slot />
+  </body>
+</html>

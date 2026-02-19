@@ -5,13 +5,14 @@ import AboutContent from '@/components/AboutContent.astro';
 import { ABOUT_CONTENT } from '@/const/AboutContent';
 
 const pageInfo = {
-  title: ABOUT_CONTENT.es.title,
+  title: ABOUT_CONTENT.en.title,
   id: 'about',
+  lang: 'en',
 };
 ---
 
 <Layaout>
   <PageContainer {...pageInfo}>
-    <AboutContent locale="es" />
+    <AboutContent locale="en" />
   </PageContainer>
 </Layaout>
