@@ -15,8 +15,8 @@ const recentProjects = PROJECTS.slice().reverse();
 
 <Layaout>
   <PageContainer {...pageInfo}>
-    <div class="mt-12 flex flex-1">
-      <div class="w-full">
+    <div class="mt-6 md:mt-12 flex flex-1">
+      <div class="w-full hidden md:block">
         <div class="projects-container flex w-full flex-col gap-6 pr-4">
           {
             recentProjects.map((project) => (
@@ -26,10 +26,13 @@ const recentProjects = PROJECTS.slice().reverse();
           }
         </div>
       </div>
-      <div class="flex w-full justify-end">
+      <div class="flex w-full justify-end flex-col gap-8 md:gap-0 md:flex-row">
         {
           recentProjects.map((project) => (
             <ProjectInfo {...project} />
+  <hr class=" text-light-gray" />
+                
+
           ))
         }
       </div>
@@ -48,7 +51,7 @@ const recentProjects = PROJECTS.slice().reverse();
   }
 
   .projects-container::-webkit-scrollbar-track {
-    background: #242424;
+    background: #4b4b4b;
   }
 
   .projects-container::-webkit-scrollbar-thumb {
@@ -72,17 +75,17 @@ const recentProjects = PROJECTS.slice().reverse();
 
         // Ocultar todos los detalles
         projectDetails.forEach((d) => {
-          d.classList.add('hidden', 'opacity-0');
+          d.classList.add('md:hidden', 'md:opacity-0');
           d.classList.remove('flex');
         });
 
         // Mostrar el seleccionado
         const target = document.getElementById(`project-detail-${projectId}`);
         if (target) {
-          target.classList.remove('hidden');
+          target.classList.remove('md:hidden');
           requestAnimationFrame(() => {
             target.classList.add('flex');
-            target.classList.remove('opacity-0');
+            target.classList.remove('md:opacity-0');
           });
         }
 

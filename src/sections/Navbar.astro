@@ -1,19 +1,26 @@
 ---
 import { NAVLINKS } from '@/const/NavLinks';
+import type { NavLink } from '@/types/NavLinks';
+
+interface Props {
+  links: NavLink[];
+}
+const { links }: Props = Astro.props;
 ---
 
 <nav
-  class="fixed top-1/2 flex w-fit -translate-y-1/2 flex-col gap-8 pl-24 font-spartan"
+  class="fixed top-1/2 flex w-fit -translate-y-1/2 flex-col gap-8 pl-6 font-spartan md:pl-24"
 >
   {
-    NAVLINKS.map((link) => {
-      const isCvDownload = link.title === 'Descargar CV';
+    links.map((link) => {
+      const isCvDownload =
+        link.title === 'Descargar CV' || link.title === 'Download CV';
 
       return (
         <a
           href={link.href}
           data-description={link.description}
-          class="nav-link w-fit text-2xl font-semibold text-light-gray-text uppercase transition-colors duration-300 hover:text-hover-nav"
+          class="nav-link w-fit text-2xl font-semibold text-hover-nav uppercase transition-colors duration-300 hover:text-hover-nav md:text-light-gray-text"
           transition:name={link.id}
           download={isCvDownload ? '' : undefined}
         >
@@ -26,7 +33,7 @@ import { NAVLINKS } from '@/const/NavLinks';
 
 <span
   id="nav-description"
-  class="fixed bottom-44 z-10 pl-24 font-spartan text-xl font-semibold text-white opacity-0 transition-opacity duration-300"
+  class="fixed bottom-44 z-10 hidden pl-24 font-spartan text-xl font-semibold text-white opacity-0 transition-opacity duration-300 md:block"
 >
 </span>
 

@@ -16,19 +16,19 @@ const getTechIcon = (tech: string) => {
 };
 ---
 
-<div
+<article
   id={`project-detail-${id}`}
-  class="project-detail hidden w-full max-w-4xl flex-col gap-4 pl-4 opacity-0 transition-opacity duration-300"
+  class="project-detail w-full max-w-4xl flex-col gap-4 transition-opacity duration-300 md:hidden md:pl-4 md:opacity-0"
 >
-  <div class="">
+  <div>
     <h2 class="text-3xl font-bold text-white">{title}</h2>
-    <div class="mt-6 h-80 w-full">
+    <div class="mt-6 w-full md:h-80">
       <img src={image} alt={title} class="h-full w-full object-cover" />
     </div>
   </div>
-  <div class="mt-4 flex flex-col items-end">
-    <p class="max-w-xl text-right text-lg  text-pretty">{long_desc}</p>
-    <div class="mt-4 flex gap-2">
+  <div class="mt-4 flex flex-col md:items-end">
+    <p class="max-w-2xl text-lg text-pretty md:text-right">{long_desc}</p>
+    <div class="mt-4 flex flex-wrap gap-2">
       {
         technologies?.map((tech: string) => {
           const Icon = getTechIcon(tech);
@@ -40,21 +40,21 @@ const getTechIcon = (tech: string) => {
         })
       }
     </div>
-    <div class="mt-4 flex items-center gap-6">
+    <div class="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 text-lg text-light-gray transition-colors duration-300 hover:text-hover-nav"
+        class="flex items-center gap-2 text-lg text-hover-nav transition-colors duration-300 hover:text-hover-nav md:text-light-gray"
         >{link}<ExternalLink class="size-4" /></a
       >
       <a
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        class="flex items-center gap-2 text-lg text-light-gray transition-colors duration-300 hover:text-hover-nav"
+        class="flex items-center gap-2 text-lg text-hover-nav transition-colors duration-300 hover:text-hover-nav md:text-light-gray"
         >Repositorio<Github class="size-6" /></a
       >
     </div>
   </div>
-</div>
+</article>

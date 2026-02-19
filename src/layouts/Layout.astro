@@ -13,14 +13,14 @@ import { ClientRouter } from 'astro:transitions';
     <title>Guidzero | Desarrollador Web | Portafolio</title>
     <ClientRouter />
   </head>
-  <body class="relative min-h-dvh w-full overflow-hidden bg-black">
+  <body class="relative min-h-dvh w-full  bg-black">
     <video
       id="video-bg"
       src="/videos/sea.mp4"
       autoplay
       loop
       muted
-      class="fixed top-0 left-0 -z-40 h-full w-full mask-radial-from-25% mask-circle mask-radial-at-center object-cover object-top"
+      class="fixed top-0 left-0 -z-40 h-full w-full mask-radial-from-25% mask-radial-at-right object-cover object-top md:mask-radial-from-25% md:mask-circle md:mask-radial-at-center"
     ></video>
 
     <slot />
