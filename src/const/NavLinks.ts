@@ -1,17 +1,11 @@
-interface NavLink {
-  id?: string;
-  title: string;
-  href: string;
-  description: string;
-}
+import type { NavLink } from '@/types/NavLinks';
 
 export const NAVLINKS: NavLink[] = [
   {
     id: 'about',
     title: 'Sobre Mí',
     href: '/about',
-    description:
-      'Conoce mis habilidades y pasión por el desarrollo web',
+    description: 'Conoce mis habilidades y pasión por el desarrollo web',
   },
   {
     id: 'experience',
