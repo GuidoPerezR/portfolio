@@ -2,6 +2,18 @@
 import '@/styles/global.css';
 import '@fontsource-variable/league-spartan';
 import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Guidzero | Desarrollador Web | Portafolio',
+  description = 'Portafolio de Guidzero. Desarollador web enfocado en crear aplicaciones de la maxima calidad.',
+  image = '/images/og-image.png',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,11 +21,26 @@ import { ClientRouter } from 'astro:transitions';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <title>Guidzero | Desarrollador Web | Portafolio</title>
+    <link rel="icon" type="image/png" href="/images/logo-g0.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
     <ClientRouter />
   </head>
-  <body class="relative min-h-dvh w-full  bg-black">
+  <body class="relative min-h-dvh w-full bg-black">
     <video
       id="video-bg"
       src="/videos/sea.mp4"
