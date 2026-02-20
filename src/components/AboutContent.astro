@@ -1,8 +1,13 @@
 ---
 import { TECHNOLOGIES } from '@/const/Tecnologies';
-import { ABOUT_CONTENT, type Locale } from '@/const/AboutContent';
+import { ABOUT_CONTENT } from '@/const/AboutContent';
+import type { Locale } from '@/types/Locale';
 
-const { locale = 'es' } = Astro.props as { locale?: Locale };
+interface Props {
+  locale: Locale;
+}
+
+const { locale = 'es' }: Props = Astro.props;
 const content = ABOUT_CONTENT[locale];
 ---
 

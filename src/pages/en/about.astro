@@ -1,5 +1,5 @@
 ---
-import Layaout from '@/layouts/Layout.astro';
+import Layout from '@/layouts/en/Layout.astro';
 import PageContainer from '@/components/PageContainer.astro';
 import AboutContent from '@/components/AboutContent.astro';
 import { ABOUT_CONTENT } from '@/const/AboutContent';
@@ -11,8 +11,8 @@ const pageInfo = {
 };
 ---
 
-<Layaout>
+<Layout>
   <PageContainer {...pageInfo}>
     <AboutContent locale="en" />
   </PageContainer>
-</Layaout>
+</Layout>

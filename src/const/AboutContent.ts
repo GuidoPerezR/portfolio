@@ -1,5 +1,3 @@
-export type Locale = 'es' | 'en';
-
 export const ABOUT_CONTENT = {
   es: {
     title: 'Sobre mí',
