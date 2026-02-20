@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title = 'Guidzero | Desarrollador Web | Portafolio',
-  description = 'Portafolio de Guidzero. Desarollador web enfocado en crear aplicaciones de la maxima calidad.',
+  description = 'Portafolio de Guidzero. Desarollador Front-End',
   image = '/images/og-image.png',
 } = Astro.props;
 ---
@@ -42,6 +42,7 @@ const {
   </head>
   <body class="relative min-h-dvh w-full bg-black">
     <video
+      transition:persist
       id="video-bg"
       src="/videos/sea.mp4"
       autoplay
