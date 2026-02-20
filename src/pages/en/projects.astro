@@ -1,16 +1,17 @@
 ---
 import PageContainer from '@/components/PageContainer.astro';
 import ProjectsContent from '@/components/ProjectsContent.astro';
-import Layaout from '@/layouts/Layout.astro';
+import Layout from '@/layouts/en/Layout.astro';
 
 const pageInfo = {
-  title: 'Proyectos',
+  title: 'Projects',
   id: 'projects',
+  lang: 'en',
 };
 ---
 
-<Layaout>
+<Layout>
   <PageContainer {...pageInfo}>
-    <ProjectsContent locale="es" />
+    <ProjectsContent locale="en" />
   </PageContainer>
-</Layaout>
+</Layout>
