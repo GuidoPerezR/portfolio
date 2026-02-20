@@ -1,0 +1,18 @@
+---
+import ContactLink from './ContactLink.astro';
+import { CONTACT_LINKS } from '@/const/ContactLinks';
+---
+
+<div class="mt-6 flex flex-1 items-center md:mt-12">
+  <div class="md:pl-8">
+    <ul class="flex flex-col gap-8">
+      {
+        CONTACT_LINKS.map((link) => (
+          <li class="flex flex-col gap-3.5 text-2xl">
+            <ContactLink {...link} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
