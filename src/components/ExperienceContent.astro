@@ -1,0 +1,87 @@
+---
+import { EXPERIENCES } from '@/const/Experiences';
+import type { Locale } from '@/types/Locale';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale = 'es' }: Props = Astro.props;
+const experiences = EXPERIENCES[locale];
+---
+
+<div class="mt-6 flex flex-1 flex-col md:mt-12 md:flex-row">
+  <div class="hidden w-full items-center pl-8 md:flex">
+    <div
+      class="flex -translate-y-12 flex-col items-start gap-6 text-3xl font-medium text-light-gray uppercase"
+    >
+      {
+        experiences.map(({ name, id }) => (
+          <button
+            class="experience-btn cursor-pointer uppercase transition-colors duration-300 hover:text-hover-nav"
+            data-id={id}
+          >
+            {name}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="my-6 flex w-full flex-col items-center gap-8 md:my-0 md:flex-row md:gap-0"
+  >
+    {
+      experiences.map(({ name, id, role, period, description }) => (
+        <div
+          id={`detail-${id}`}
+          class="experience-detail flex flex-col gap-4 transition-opacity duration-300 md:hidden md:-translate-y-12 md:p-8 md:opacity-0"
+        >
+          <h2 class="text-3xl font-bold text-white">
+            {name} - {role}
+          </h2>
+          <p class="text-xl text-light-gray">{period}</p>
+          <p class="text-xl text-white">{description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+<script>
+  function setupExperienceButtons() {
+    const buttons = document.querySelectorAll('.experience-btn');
+    const details = document.querySelectorAll('.experience-detail');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+
+        // Ocultar todos los detalles
+        details.forEach((d) => {
+          d.classList.add('md:hidden', 'md:opacity-0');
+          d.classList.remove('flex');
+        });
+
+        // Mostrar el seleccionado
+        const target = document.getElementById(`detail-${id}`);
+        if (target) {
+          target.classList.remove('md:hidden');
+          // Pequeño delay para que la transición de opacity funcione
+          requestAnimationFrame(() => {
+            target.classList.add('flex');
+            target.classList.remove('md:opacity-0');
+          });
+        }
+
+        // Marcar botón activo
+        buttons.forEach((b) => b.classList.remove('text-white'));
+        btn.classList.add('text-white');
+      });
+    });
+  }
+
+  // Ejecutar en la carga inicial
+  setupExperienceButtons();
+
+  // Ejecutar después de cada navegación con View Transitions
+  document.addEventListener('astro:page-load', setupExperienceButtons);
+</script>

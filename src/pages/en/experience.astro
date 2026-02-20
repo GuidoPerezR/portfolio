@@ -1,16 +1,17 @@
 ---
 import PageContainer from '@/components/PageContainer.astro';
 import ExperienceContent from '@/components/ExperienceContent.astro';
-import Layaout from '@/layouts/Layout.astro';
+import Layout from '@/layouts/en/Layout.astro';
 
 const pageInfo = {
-  title: 'Experiencia',
+  title: 'Experience',
   id: 'experience',
+  lang: 'en',
 };
 ---
 
-<Layaout>
+<Layout>
   <PageContainer {...pageInfo}>
-    <ExperienceContent locale="es" />
+    <ExperienceContent locale="en" />
   </PageContainer>
-</Layaout>
+</Layout>
