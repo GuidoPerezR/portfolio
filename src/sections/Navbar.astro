@@ -1,18 +1,19 @@
 ---
-import { NAVLINKS } from '@/const/NavLinks';
-import type { NavLink } from '@/types/NavLinks';
-
+import { NAV_CONTENT } from '@/const/NavLinks';
+import type { Locale } from '@/types/Locale';
 interface Props {
-  links: NavLink[];
+  locale: Locale;
 }
-const { links }: Props = Astro.props;
+const { locale = 'es' }: Props = Astro.props;
+
+const content = NAV_CONTENT[locale];
 ---
 
 <nav
   class="fixed top-1/2 flex w-fit -translate-y-1/2 flex-col gap-8 pl-6 font-spartan md:pl-24"
 >
   {
-    links.map((link) => {
+    content.map((link) => {
       const isCvDownload =
         link.title === 'Descargar CV' || link.title === 'Download CV';
 
