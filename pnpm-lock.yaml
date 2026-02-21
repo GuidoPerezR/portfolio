@@ -17,6 +17,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1
+      '@vercel/speed-insights':
+        specifier: ^1.3.1
+        version: 1.3.1
       astro:
         specifier: 5.13.7
         version: 5.13.7(@types/node@24.3.2)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.1)(typescript@5.9.2)
@@ -651,6 +654,29 @@ packages:
     peerDependenciesMeta:
       '@remix-run/react':
         optional: true
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+
+  '@vercel/speed-insights@1.3.1':
+    resolution: {integrity: sha512-PbEr7FrMkUrGYvlcLHGkXdCkxnylCWePx7lPxxq36DNdfo9mcUjLOmqOyPDHAOgnfqgGGdmE3XI9L/4+5fr+vQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
       '@sveltejs/kit':
         optional: true
       next:
@@ -2298,6 +2324,8 @@ snapshots:
   '@ungap/structured-clone@1.3.0': {}
 
   '@vercel/analytics@1.6.1': {}
+
+  '@vercel/speed-insights@1.3.1': {}
 
   acorn@8.15.0: {}
 
