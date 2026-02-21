@@ -2,7 +2,7 @@
 import '@/styles/global.css';
 import '@fontsource-variable/league-spartan';
 import { ClientRouter } from 'astro:transitions';
-
+import Analytics from '@vercel/analytics/astro';
 interface Props {
   title?: string;
   description?: string;
@@ -53,5 +53,6 @@ const {
     </video>
 
     <slot />
+    <Analytics />
   </body>
 </html>
