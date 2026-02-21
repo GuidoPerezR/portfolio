@@ -11,14 +11,14 @@ const experiences = EXPERIENCES[locale];
 ---
 
 <div class="mt-6 flex flex-1 flex-col md:mt-12 md:flex-row">
-  <div class="hidden w-full items-center pl-8 md:flex">
+  <div class="hidden w-full items-center lg:pl-8 md:flex">
     <div
       class="flex -translate-y-12 flex-col items-start gap-6 text-3xl font-medium text-light-gray uppercase"
     >
       {
         experiences.map(({ name, id }) => (
           <button
-            class="experience-btn cursor-pointer uppercase transition-colors duration-300 hover:text-hover-nav"
+            class="experience-btn cursor-pointer uppercase transition-colors duration-300 hover:text-hover-nav text-left "
             data-id={id}
           >
             {name}
