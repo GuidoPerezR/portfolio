@@ -42,7 +42,7 @@ const {
     <ClientRouter />
   </head>
   <body class="relative min-h-dvh w-full bg-black">
-    <video
+    <!-- <video
       id="bg-video"
       autoplay
       loop
@@ -51,7 +51,16 @@ const {
       class="fixed top-0 left-0 -z-40 h-full w-full mask-radial-from-25% mask-radial-at-right object-cover object-top md:mask-radial-from-25% md:mask-circle md:mask-radial-at-center"
     >
       <source src="/videos/sea_short.webm" type="video/webm" />
-    </video>
+    </video> -->
+
+    <video
+      id="video-bg"
+      src="/videos/bg.mp4"
+      autoplay
+      loop
+      muted
+      class="fixed top-0 left-0 -z-30 h-full w-full object-cover object-top"
+      transition:persist="bg-video"></video>
 
     <slot />
     <Analytics />
