@@ -23,7 +23,7 @@ const content = ABOUT_CONTENT[locale];
         {
           TECHNOLOGIES.map(({ name, color, icon: Icon }) => (
             <li
-              class={`group flex w-fit cursor-auto items-center gap-2 text-xl transition-colors duration-300 will-change-transform md:text-2xl ${color}`}
+              class={`group flex cursor-auto items-center gap-2 text-xl transition-colors duration-300 will-change-transform md:text-2xl ${color}`}
             >
               {name}
               <Icon class="size-8 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100 lg:-translate-x-8 lg:translate-y-10 lg:rotate-90 lg:opacity-0" />
@@ -43,6 +43,7 @@ const content = ABOUT_CONTENT[locale];
           src="/images/me.webp"
           alt={content.imageAlt}
           class="h-full w-full object-cover object-top"
+          loading="eager"
         />
       </div>
     </div>
