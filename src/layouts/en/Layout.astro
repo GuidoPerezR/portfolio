@@ -42,15 +42,17 @@ const {
   </head>
   <body class="relative min-h-dvh w-full bg-black">
     <video
-      id="bg-video"
+      id="video-bg"
+      src="/videos/bg.mp4"
       autoplay
       loop
       muted
-      transition:persist="bg-video"
-      class="fixed top-0 left-0 -z-40 h-full w-full mask-radial-from-25% mask-radial-at-right object-cover object-top md:mask-radial-from-25% md:mask-circle md:mask-radial-at-center"
-    >
-      <source src="/videos/sea_short.webm" type="video/webm" />
-    </video>
+      playsinline
+      webkit-playsinline="true"
+      preload="auto"
+      controls={false}
+      class="fixed top-0 left-0 -z-30 h-full w-full object-cover object-top"
+      transition:persist="bg-video"></video>
 
     <slot />
   </body>
